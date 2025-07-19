@@ -52,48 +52,47 @@ function App() {
     setErrorMessage('');
   };
 
-  return (
-    <div className=\"main\">
-      <h1>Trivia Tiles: {puzzleData.category}</h1>
+ return (
+  <div className="main">
+    <h1>Trivia Tiles: {puzzleData.category}</h1>
 
-      <TileWheel
-        center={puzzleData.center}
-        outer={puzzleData.outer}
-        onLetterClick={handleLetterClick}
-      />
+    <TileWheel
+      center={puzzleData.center}
+      outer={puzzleData.outer}
+      onLetterClick={handleLetterClick}
+    />
 
-      <WordInput
-        currentWord={currentWord}
-        setCurrentWord={setCurrentWord}
-        handleWordSubmit={handleWordSubmit}
-        centerLetter={puzzleData.center}
-      />
+    <WordInput
+      currentWord={currentWord}
+      setCurrentWord={setCurrentWord}
+      handleWordSubmit={handleWordSubmit}
+      centerLetter={puzzleData.center}
+    />
 
-      {errorMessage && <div className=\"error-message\">{errorMessage}</div>}
+    {errorMessage && <div className="error-message">{errorMessage}</div>}
 
-      <div className=\"score\">
-        Score: <b>{score}</b>
-      </div>
-
-      <div className=\"found-words\">
-        <h3>Found Words ({foundWords.length})</h3>
-        <div>{foundWords.join(', ')}</div>
-      </div>
-
-      <TriviaClue
-        triviaClues={puzzleData.triviaClues}
-        triviaProgress={triviaProgress}
-      />
-
-      {triviaProgress.length === puzzleData.triviaClues.length && (
-        <FinalTrivia
-          question={puzzleData.finalTriviaQuestion.question}
-          correctAnswer={puzzleData.finalTriviaQuestion.answer}
-          onCorrect={() => setScore((prev) => prev + 25)}
-        />
-      )}
+    <div className="score">
+      Score: <b>{score}</b>
     </div>
-  );
-}
 
+    <div className="found-words">
+      <h3>Found Words ({foundWords.length})</h3>
+      <div>{foundWords.join(', ')}</div>
+    </div>
+
+    <TriviaClue
+      triviaClues={puzzleData.triviaClues}
+      triviaProgress={triviaProgress}
+    />
+
+    {triviaProgress.length === puzzleData.triviaClues.length && (
+      <FinalTrivia
+        question={puzzleData.finalTriviaQuestion.question}
+        correctAnswer={puzzleData.finalTriviaQuestion.answer}
+        onCorrect={() => setScore((prev) => prev + 25)}
+      />
+    )}
+  </div>
+);
+}
 export default App;
