@@ -1,0 +1,18 @@
+{
+  "center": "A",
+  "outer": ["B", "C", "D", "E", "F", "G", "H"],
+  "category": "Classical Music",
+  "triviaWords": ["BACH", "CHORD", "FUGUE", "SCALE"],
+  "triviaClues": [
+    "He composed the Brandenburg Concertos.",
+    "A combination of notes sounded together.",
+    "A musical composition with interweaving melodies.",
+    "A series of musical notes ordered by pitch."
+  ],
+  "jackpotWord": "ABCDEFGH",
+  "validWords": ["BACH", "CHORD", "FUGUE", "SCALE"],
+  "finalTriviaQuestion": {
+    "question": "Which Baroque composer is known for the Brandenburg Concertos?",
+    "answer": "Bach"
+  }
+}
